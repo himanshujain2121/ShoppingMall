@@ -1,0 +1,27 @@
+<p>
+  shirt-variety works!
+</p>
+<table *ngIf="shirtlst"class="table table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Color</th>
+      <th>Size</th>
+      <th>Company</th>
+      <th>Price</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shirt of shirtlst">
+      <td>{{shirt.id}}</td>
+      <td>{{shirt.color}}</td>
+      <td>{{shirt.size}}</td>
+      <td>{{shirt.company}}</td>
+      <td>{{shirt.price}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="shirt.id">Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

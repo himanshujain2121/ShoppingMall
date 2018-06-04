@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Shirt } from '../../service/fashion-list/shirt';
-import { FashionListService } from '../../service/fashion-list/fashion-list.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fashion-list',
@@ -9,13 +8,11 @@ import { FashionListService } from '../../service/fashion-list/fashion-list.serv
 })
 export class FashionListComponent implements OnInit {
 
-  shirtlst:Shirt[] ;
-  constructor( private fashionList:FashionListService) { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
   }
-
   loadShirts(){
-    this.shirtlst = this.fashionList.getShirtList();
+    this.route.navigate(['fashion/shirt-variety']);
   }
 }

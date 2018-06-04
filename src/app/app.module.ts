@@ -9,8 +9,11 @@ import { JewellaryComponent } from './jewellary/jewellary.component';
 import { SportsComponent } from './sports/sports.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FashionListComponent } from './fashion/fashion-list/fashion-list.component';
+import { ShirtVarietyComponent } from './fashion/shirt-variety/shirt-variety.component';
+import { ShirtDescriptionComponent } from './fashion/shirt-description/shirt-description.component';
 // service
 import { FashionListService } from './service/fashion-list/fashion-list.service';
+
 
 @NgModule({
   declarations: [
@@ -20,12 +23,16 @@ import { FashionListService } from './service/fashion-list/fashion-list.service'
     JewellaryComponent,
     SportsComponent,
     PagenotfoundComponent,
-    FashionListComponent
+    FashionListComponent,
+    ShirtVarietyComponent,
+    ShirtDescriptionComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path: 'fashion', component: FashionComponent },
+      { path: 'fashion/shirt-variety', component: ShirtVarietyComponent },
+      { path: 'fashion/shirt-variety/:id', component: ShirtDescriptionComponent },
       { path: 'jewellary', component: JewellaryComponent },
       { path: 'sports', component: SportsComponent },
       { path: '', redirectTo: 'fashion', pathMatch: 'full' },
