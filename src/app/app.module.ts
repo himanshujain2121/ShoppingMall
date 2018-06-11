@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 // component
 import { AppComponent } from './app.component';
 import { ShoppingComponent } from './shopping/shopping.component';
@@ -13,6 +14,8 @@ import { ShirtVarietyComponent } from './fashion/shirt-variety/shirt-variety.com
 import { ShirtDescriptionComponent } from './fashion/shirt-description/shirt-description.component';
 // service
 import { FashionListService } from './service/fashion-list/fashion-list.service';
+import { LoginServiceComponent } from './login-service/login-service.component';
+import { LoginServiceService } from './service/login/login-service.service';
 
 
 @NgModule({
@@ -25,23 +28,27 @@ import { FashionListService } from './service/fashion-list/fashion-list.service'
     PagenotfoundComponent,
     FashionListComponent,
     ShirtVarietyComponent,
-    ShirtDescriptionComponent
+    ShirtDescriptionComponent,
+    LoginServiceComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'fashion', component: FashionComponent },
       { path: 'fashion/shirt-variety', component: ShirtVarietyComponent },
       { path: 'fashion/shirt-variety/:id', component: ShirtDescriptionComponent },
       { path: 'jewellary', component: JewellaryComponent },
       { path: 'sports', component: SportsComponent },
+      { path: 'login', component: LoginServiceComponent },
       { path: '', redirectTo: 'fashion', pathMatch: 'full' },
       { path: '**', component: PagenotfoundComponent }
     ])
 
   ],
   providers: [ 
-      FashionListService
+      FashionListService,
+      LoginServiceService
   ],
   bootstrap: [AppComponent]
 })
