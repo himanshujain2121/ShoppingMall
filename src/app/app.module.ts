@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CollapseModule } from 'ngx-bootstrap';
 // component
 import { AppComponent } from './app.component';
 import { ShoppingComponent } from './shopping/shopping.component';
@@ -16,6 +19,7 @@ import { ShirtDescriptionComponent } from './fashion/shirt-description/shirt-des
 import { FashionListService } from './service/fashion-list/fashion-list.service';
 import { LoginServiceComponent } from './login-service/login-service.component';
 import { LoginServiceService } from './service/login/login-service.service';
+import { CarouselSlideComponent } from './fashion/carousel-slide/carousel-slide.component';
 
 
 @NgModule({
@@ -29,11 +33,15 @@ import { LoginServiceService } from './service/login/login-service.service';
     FashionListComponent,
     ShirtVarietyComponent,
     ShirtDescriptionComponent,
-    LoginServiceComponent
+    LoginServiceComponent,
+    CarouselSlideComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    NgbModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    CollapseModule.forRoot(),
     RouterModule.forRoot([
       { path: 'fashion', component: FashionComponent },
       { path: 'fashion/shirt-variety', component: ShirtVarietyComponent },
